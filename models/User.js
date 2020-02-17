@@ -19,12 +19,12 @@ const UserSchema = new Schema({
     type: String
   },
   account: [{ type: Schema.Types.ObjectId, ref: "Account" }],
+  id_country: {
+    type: String
+  },
   date: {
     type: Date,
     default: Date.now
-  },
-  id_country: {
-    type: String
   }
 });
 
