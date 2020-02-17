@@ -3,7 +3,8 @@ const bodyParser = require('body-parser');
 const passport = require('passport');
 const config = require("./config/db");
 const { PORT } = require("./config/variabelEnv");
-const users = require('./routes/user'); 
+const users = require('./routes/user');
+const cors = require('cors')
 
 const account = require('./routes/account.route');
 
@@ -24,6 +25,7 @@ require('./passport')(passport);
 
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
+app.use(cors())
 
 app.use('/users', users);
 
